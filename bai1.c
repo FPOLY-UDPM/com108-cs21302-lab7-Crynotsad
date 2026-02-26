@@ -12,3 +12,35 @@
 
 // VIẾT CODE Ở ĐÂY
 
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int nguyenAm = 0, phuAm = 0;
+
+    printf("Nhap vao mot chuoi: ");
+    scanf(" %[^\n]", str);   // Nhap ca dau cach
+
+    for(int i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+
+        // Neu la chu cai
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+
+            // Kiem tra nguyen am
+            if(c == 'a' || c == 'e' || c == 'i' || 
+               c == 'o' || c == 'u' || c == 'y' ||
+               c == 'A' || c == 'E' || c == 'I' || 
+               c == 'O' || c == 'U' || c == 'Y') {
+                nguyenAm++;
+            } else {
+                phuAm++;
+            }
+        }
+    }
+
+    printf("So nguyen am: %d\n", nguyenAm);
+    printf("So phu am: %d\n", phuAm);
+
+    return 0;
+}
